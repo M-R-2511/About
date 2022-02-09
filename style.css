@@ -11,7 +11,6 @@ a {
 }
 body {
   background-color: #111;
-  /* overflow: hidden; */
 }
 .bg-yellow {
   position: absolute;
@@ -21,11 +20,11 @@ body {
   width: 100%;
   z-index: -1;
 }
-.container {
+.container-fluid {
   width: 100%;
-  min-height: 100vh;
+  max-height: 100vh;
   margin: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .row {
   place-items: center;
@@ -33,13 +32,13 @@ body {
 #profile-image {
   margin: 40px;
   z-index: 11;
-  height: calc(100vh - 80px);
+  /* height: calc(100vh - 80px); */
   background-position: center;
   background-image: url(profile-image3.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 0 7px rgb(0 0 0 / 90%);
-  width: 33%;
+  width: 32%;
   position: relative;
   border-radius: 30px;
 }
@@ -59,22 +58,18 @@ body {
 }
 #about {
   color: #fff;
-  /* margin-left: 10px; */
 }
 #about h1 {
   text-align: center;
   font-size: 42px;
-  position: relative;
   font-weight: 700;
 }
-#about h1::before {
-  content: "";
-  position: absolute;
-  top: 22px;
-  left: 10px;
+#about h1 span:nth-child(1) {
+  display: inline-block;
   background: #ffb400;
-  width: 6%;
+  width: 10%;
   height: 5px;
+  margin-bottom: 12.5px;
   border-radius: 20px;
 }
 #about h1 span {
@@ -136,10 +131,8 @@ button i {
 #icons ul li {
   position: relative;
   text-align: right;
-  /* padding: 0 5px; */
   margin: 30px auto;
   cursor: pointer;
-  /* margin-right: 0; */
 }
 #icons ul li::after {
   content: "";
@@ -183,20 +176,39 @@ button i {
   background-color: #ffb400;
 }
 
-@media (max-width: 968px) {
+ /* Tablet Responsive */
+@media (max-height: 1200px) {
+  #profile-image {
+    width: 26%;
+  }
+  #profile-image img {
+    display: block;
+    height: 90vh;
+    width: 100%;
+  }
+  #about h1 {
+    font-size: 30px;
+  }
+  #about p {
+    font-size: 20px;
+  }
+}
+
+/* Phone Responsive */
+@media (max-width: 986px) {
   .bg-yellow {
     display: none;
   }
   #profile-image {
     border-radius: 50%;
-    width: 50%;
-    height: 30vh;
+    min-width: 50%;
+    min-height: 30vh;
     margin: 50px auto;
     box-shadow: none;
     background: none;
   }
   #profile-image::before {
-    background: none;
+    display: none;
   }
   #profile-image img {
     display: block;
@@ -210,8 +222,8 @@ button i {
   #about h1 {
     font-size: 30px;
   }
-  #about h1::before {
-    background: none;
+  #about h1 span:nth-child(1) {
+    display: none;
   }
   #about p {
     text-align: left;
