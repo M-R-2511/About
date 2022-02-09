@@ -10,6 +10,9 @@ a {
   text-decoration: none;
   color: #fff;
 }
+a:hover {
+  color: #fff;
+}
 body {
   background-color: #111;
 }
@@ -25,7 +28,6 @@ body {
   width: 100%;
   max-height: 100vh;
   margin: auto;
-  /* overflow: hidden; */
 }
 .row {
   place-items: center;
@@ -33,7 +35,7 @@ body {
 #profile-image {
   margin: 40px;
   z-index: 11;
-  /* height: calc(100vh - 80px); */
+  min-height: 90vh;
   background-position: center;
   background-image: url(profile-image3.jpeg);
   background-repeat: no-repeat;
@@ -177,15 +179,11 @@ button i {
   background-color: #ffb400;
 }
 
- /* Tablet Responsive */
-@media (max-height: 1200px) {
+/* Tablet Responsive */
+@media (max-height: 1024px) {
   #profile-image {
-    width: 26%;
-  }
-  #profile-image img {
-    display: block;
-    height: 90vh;
-    width: 100%;
+    width: 22%;
+    max-height: 40vh;
   }
   #about h1 {
     font-size: 30px;
@@ -196,7 +194,7 @@ button i {
 }
 
 /* Phone Responsive */
-@media (max-width: 986px) {
+@media (max-width: 1024px) {
   .bg-yellow {
     display: none;
   }
