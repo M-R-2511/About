@@ -39,7 +39,7 @@ body {
   background-position: center;
   background-image: url(pro.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   box-shadow: 0 0 7px rgb(0 0 0 / 90%);
   width: 32%;
   position: relative;
